@@ -6,7 +6,7 @@
 #    By: sklaokli <sklaokli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 19:44:55 by sklaokli          #+#    #+#              #
-#    Updated: 2025/01/13 22:17:57 by sklaokli         ###   ########.fr        #
+#    Updated: 2025/01/13 22:43:59 by sklaokli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,14 @@ OBJ_DIR	=	objects
 INC_DIR	=	include
 
 ## Subdirectories
-CHAR_DIR	=	char/
-INT_DIR		=	int/
-STR_DIR		=	str/
-CONV_DIR	=	conv/
-MEM_DIR		=	mem/
-FD_DIR		=	fd/
-LST_DIR		=	lst/
-CUSTOM_DIR	=	custom/
+CHAR_DIR	=	char
+INT_DIR		=	int
+STR_DIR		=	str
+CONV_DIR	=	conv
+MEM_DIR		=	mem
+FD_DIR		=	fd
+LST_DIR		=	lst
+CUSTOM_DIR	=	custom
 
 ## Files grouped by subdirectory
 CHAR_FILES	=	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
@@ -52,14 +52,14 @@ LST_FILES	=	ft_lstnew.c ft_lstlast.c ft_lstadd_front.c ft_lstadd_back.c \
 CUSTOM_FILES =	ft_exit.c ft_is_empty_str.c ft_is_invalid_argv.c ft_perror_exit.c
 
 ## Combine all files with their respective subdirectories
-FILES		=	$(addprefix $(CHAR_DIR), $(CHAR_FILES)) \
-				$(addprefix $(INT_DIR), $(INT_FILES)) \
-				$(addprefix $(STR_DIR), $(STR_FILES)) \
-				$(addprefix $(CONV_DIR), $(CONV_FILES)) \
-				$(addprefix $(MEM_DIR), $(MEM_FILES)) \
-				$(addprefix $(FD_DIR), $(FD_FILES)) \
-				$(addprefix $(LST_DIR), $(LST_FILES)) \
-				$(addprefix $(CUSTOM_DIR), $(CUSTOM_FILES))
+FILES		=	$(addprefix $(CHAR_DIR)/, $(CHAR_FILES)) \
+				$(addprefix $(INT_DIR)/, $(INT_FILES)) \
+				$(addprefix $(STR_DIR)/, $(STR_FILES)) \
+				$(addprefix $(CONV_DIR)/, $(CONV_FILES)) \
+				$(addprefix $(MEM_DIR)/, $(MEM_FILES)) \
+				$(addprefix $(FD_DIR)/, $(FD_FILES)) \
+				$(addprefix $(LST_DIR)/, $(LST_FILES)) \
+				$(addprefix $(CUSTOM_DIR)/, $(CUSTOM_FILES))
 
 SRC			=	$(addprefix $(SRC_DIR)/, $(FILES))
 OBJ			=	$(addprefix $(OBJ_DIR)/, $(FILES:.c=.o))
